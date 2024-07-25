@@ -21,11 +21,9 @@ class MyApp(QtWidgets.QWidget):
             # Set fixed size based on loaded UI
             self.setFixedSize(self.size())
 
+            ##if you have problem on databaseUrl just copy the authDomain
+            #then add http://the the auto domain
 
-
-
-
-            
             self.firebaseConfig = {
             'apiKey': "AIzaSyDzSwdg9QKjSYsj2xpl_6Rpeo6qthJ6T34",
             'authDomain': "projectshow-73dac.firebaseapp.com",
@@ -37,11 +35,9 @@ class MyApp(QtWidgets.QWidget):
             'measurementId': "G-9XC58HSN6Y"
             }
 
-
             self.firebase = pyrebase.initialize_app(self.firebaseConfig)
             self.db=self.firebase.database()
             self.auth=self.firebase.auth()
-            self.storage=self.firebase.storage()
      
             self.save_bt.clicked.connect(self.login_auth)
             self.register_bt.clicked.connect(self.register_account)
@@ -80,8 +76,6 @@ class MyApp(QtWidgets.QWidget):
                 self.label_page_2.setText(f'email created with name of {register_email}')
             except Exception:
                 self.label_page_2.setText(f'email was already in use {register_email}')
-
-            
         else:
             self.label_page_2.setText(f'Password and Confirm was not same')
 
@@ -102,3 +96,19 @@ import pyrebase
 
 
 
+#For those who have error you encounter 
+#no  'databaseURL  if give you solution to your problem since i already encounter 
+
+#self.firebaseConfig = {
+#            'apiKey': "AIzaSyqwe123szSYsj2xpl_6Rpeozxczxczx6qthJ6T34",
+#            'authDomain': "example-714dac.firebaseapp.com",
+#            'databaseURL':'http://example-714dac.firebaseapp.com',
+#            'projectId': "example-714dac",
+#            'storageBucket': "example-714dac.appspot.com",
+#            'messagingSenderId': "378019437434",
+#            'appId': "1:3713221312437434:web:6312395beaczxczc907114c3",
+#            'measurementId': "G-312316Y"
+#            }
+
+#You just need to copy the 'authDomain': "example-714dac.firebaseapp.com", <--- this one 
+#then add http://example-714dac.firebaseapp.com it should be run 
