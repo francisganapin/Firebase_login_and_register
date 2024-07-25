@@ -112,3 +112,5 @@ import pyrebase
 
 #You just need to copy the 'authDomain': "example-714dac.firebaseapp.com", <--- this one 
 #then add http://example-714dac.firebaseapp.com it should be run 
+
+#special thanks for Code First with Hala since i tried the the tutorial even without gui
